@@ -4,7 +4,18 @@
 
 
 ## 描述:
-上學時，和別人做的專題程式，使用Google firebase資料庫、Flask，**只收入我所寫的部分**。
+上學時，和別人做的專題程式，目前上傳為半成品程式碼。
+使用Google firebase資料庫、Flask，**只收入我所寫的部分**。
+
+使用者案例圖: 
+
+![己付果攤案例圖2](https://github.com/user-attachments/assets/343a4e4d-b952-4cc1-ba15-65c30e288b3b)
+
+系統示意圖:
+
+<img width="546" alt="image" src="https://github.com/user-attachments/assets/8828fa04-09b2-424f-bd38-d654f49d66ca">
+
+
 
 ### 功能:　　　　
 ##### 自助結帳櫃台UI:
