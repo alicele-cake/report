@@ -51,3 +51,20 @@ css:
 
 templates : 
 .html
+
+
+## Firebase資料庫格式:
+
+<img width="687" alt="image" src="https://github.com/user-attachments/assets/515df2e7-3105-4f15-94a8-dec74796a889">
+
+<img width="656" alt="image" src="https://github.com/user-attachments/assets/07002f47-493e-4ad0-b444-13aeadf4b5ee">
+
+<img width="691" alt="image" src="https://github.com/user-attachments/assets/270b8052-e8fa-4d28-9ba8-8f5425ed138e">
+
+<img width="689" alt="image" src="https://github.com/user-attachments/assets/03289f1d-84fe-4d59-8f49-3e0061529b7e">
+
+<img width="688" alt="image" src="https://github.com/user-attachments/assets/ae9c8c86-7e9f-4622-86d7-20a3830f808d">
+
+
+
+
