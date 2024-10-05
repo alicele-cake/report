@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>營業額</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/revenue.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+        <!-- 導引欄 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/index">
+                <i class="bi bi-house"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/sales">售出數量</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/peak">交易尖峰時段</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/inventory">庫存</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- 內容 -->
+    <div id="lastUpdate">最近更新: 未生成圖表</div>
+        <div class="date">
+            <!-- <label for="formType">選擇表單類型:</label> -->
+            <div id="formTypeContainer">
+                <select id="formType" name="formType">
+                    <option value="">選擇表單</option>
+                    <option value="dateFormDay">日</option>
+                    <option value="dateFormWeek">周</option>
+                    <option value="dateForm">月</option>
+                    <option value="dateFormYear">年</option>
+                </select>
+            </div>
+
+            <div id="formContainer"></div>
+        </div>
+
+        <div class="chart">
+            <canvas id="myBarChart"></canvas>
+        </div>
+
+
+        <div class="table_area">
+            <div id="dataTableContainer">
+                <!-- 数据表将会被插入到这里 -->
+            </div>
+        </div>
+
+<!-- 
+    <div id="lastUpdate">最近更新: 未生成圖表</div>
+    <label for="formType">選擇表單類型:</label>
+    <select id="formType" name="formType">
+        <option value="">選擇表單</option>
+        <option value="dateFormDay">日</option>
+        <option value="dateFormWeek">周</option>
+        <option value="dateForm">月</option>
+        <option value="dateFormYear">年</option>
+    </select>
+
+    <div id="formContainer"></div>
+
+
+    <canvas id="myBarChart" width="400px" height="400px"></canvas>
+
+ 
+    <div id="dataTableContainer">
+    </div>
+    -->
+
+    
+    <script type="module" src="{{ url_for('static', filename='revenue.js') }}"></script>
+</body>
+</html>

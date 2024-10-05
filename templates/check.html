@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認商品</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- 引用 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/check.css') }}">
+    
+    </head>
+    
+</head>
+<body>
+    <!-- 上面 -->
+    <div class="line no-select">
+        <div class="home_area">
+            <button id="homeButton">
+                <a href="/">返回首頁</a>
+            </button>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="green_circle">結算商品</div>
+                <div class="arrow">→</div>
+            </div>
+            <div class="step">
+                <div class="yellow_circle">確認商品</div>
+                <div class="arrow">→</div>
+            </div>
+            <div class="step">
+                <div class="grey_circle">付款</div>
+                <div class="arrow">→</div>
+            </div>
+            <div class="grey_circle">
+                <div class="circle tick">&#10003;</div> <!-- 勾勾 -->
+            </div>
+        </div>
+
+        <div class="home_area">
+        </div>
+        
+    </div>
+
+    
+    <div class="context">
+        <!-- 單據 -->
+        <div class="table_area">
+            <!-- 表格内容将被动态填充 -->
+        </div>
+
+        <!-- 文字與按鈕 -->
+        <div class="area">
+            <div class="system_area">
+                <div class="text_area">
+                    <p>如商品明細無誤，點擊確認後選擇付款方式</p>
+                </div>
+                <div class="button_area no-select">
+                    <div class="backButton_area">
+                        <button id="backButton">
+                            <a href="/buy_system">返回偵測</a>
+                        </button>
+                    </div>
+                    
+                    <div class="confirmButton_area">
+                        <button id="confirmButton">確認</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="sos_area no-select">
+                <button id="sosButton">呼叫店員</button>
+            </div>
+            
+        </div>
+
+        
+    </div>
+
+
+    
+
+   
+    
+    
+
+    <script  type="module" src="{{ url_for('static', filename='check.js') }}"></script>
+</body>
+</html>

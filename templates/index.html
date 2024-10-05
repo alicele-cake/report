@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系統</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    
+</head>
+<body>
+    <h1>管理系統</h1>
+    <div class="container">
+        
+        <div class="">
+            <a href="/revenue" class="box">營業額</a>
+        </div>
+
+        <div class="">
+            <a href="/sales" class="box">售出數量</a>
+        </div>
+
+
+        <div class="">
+            <a href="/inventory" class="box">庫存</a>
+        </div>
+
+        <div class="">
+            <a href="/peak" class="box">交易尖峰時段</a>
+        </div>
+        
+    </div>
+    <!-- <div class="button-container">
+        <a href="/schedule" class="rectangle button">排班表</a>
+    </div> -->
+</body>
+</html>

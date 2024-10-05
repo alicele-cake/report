@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 100vw; /* 设置宽度为视口宽度 */
+  height: 100vh; /* 设置高度为视口高度 */
+}
+
+/* 標題 */
+h1{
+  font-size: 2.5vw;
+}
+
+
+/* 系統內容 */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5% auto;
+  width: 80vw;
+  height: 80vh;
+}
+
+/* 框框的區域 */
+.container div{
+  display: flex;
+  justify-content: center;
+  width:20vw;
+}
+
+/* 框框 */
+.box {
+  width: 15vw;
+  height: 15vw;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 1.7vw;
+}
+.box:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+/* 不用的CSS */
+/* 不用的CSS */
+.bottom-link {
+  position: relative;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.rectangle {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin: 10px;
+}
+.rectangle:hover {
+  background-color: #f0f0f0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.button-container .button {
+  margin: 0 5px;
+}
+
+/* 不用的CSS */
+/* 不用的CSS */

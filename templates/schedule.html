@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排班表</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .bottom-link {
+            margin-bottom: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #saveButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>排班表</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>時段/星期</th>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9:00-14:00</td>
+                <td><input type="text" id="mon1"></td>
+                <td><input type="text" id="tue1"></td>
+                <td><input type="text" id="wed1"></td>
+                <td><input type="text" id="thu1"></td>
+                <td><input type="text" id="fri1"></td>
+                <td><input type="text" id="sat1"></td>
+                <td><input type="text" id="sun1"></td>
+            </tr>
+            <tr>
+                <td>13:00-18:00</td>
+                <td><input type="text" id="mon2"></td>
+                <td><input type="text" id="tue2"></td>
+                <td><input type="text" id="wed2"></td>
+                <td><input type="text" id="thu2"></td>
+                <td><input type="text" id="fri2"></td>
+                <td><input type="text" id="sat2"></td>
+                <td><input type="text" id="sun2"></td>
+            </tr>
+            <tr>
+                <td>17:00-22:00</td>
+                <td><input type="text" id="mon3"></td>
+                <td><input type="text" id="tue3"></td>
+                <td><input type="text" id="wed3"></td>
+                <td><input type="text" id="thu3"></td>
+                <td><input type="text" id="fri3"></td>
+                <td><input type="text" id="sat3"></td>
+                <td><input type="text" id="sun3"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="saveButton">儲存</button>
+    <div class="bottom-link">
+        <a href="/">返回首頁</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const schedule = {{ schedule|tojson }};
+            document.getElementById('mon1').value = schedule.mon[0];
+            document.getElementById('mon2').value = schedule.mon[1];
+            document.getElementById('mon3').value = schedule.mon[2];
+            document.getElementById('tue1').value = schedule.tue[0];
+            document.getElementById('tue2').value = schedule.tue[1];
+            document.getElementById('tue3').value = schedule.tue[2];
+            document.getElementById('wed1').value = schedule.wed[0];
+            document.getElementById('wed2').value = schedule.wed[1];
+            document.getElementById('wed3').value = schedule.wed[2];
+            document.getElementById('thu1').value = schedule.thu[0];
+            document.getElementById('thu2').value = schedule.thu[1];
+            document.getElementById('thu3').value = schedule.thu[2];
+            document.getElementById('fri1').value = schedule.fri[0];
+            document.getElementById('fri2').value = schedule.fri[1];
+            document.getElementById('fri3').value = schedule.fri[2];
+            document.getElementById('sat1').value = schedule.sat[0];
+            document.getElementById('sat2').value = schedule.sat[1];
+            document.getElementById('sat3').value = schedule.sat[2];
+            document.getElementById('sun1').value = schedule.sun[0];
+            document.getElementById('sun2').value = schedule.sun[1];
+            document.getElementById('sun3').value = schedule.sun[2];
+        });
+
+        document.getElementById('saveButton').addEventListener('click', function() {
+            const schedule = {
+                mon: [document.getElementById('mon1').value, document.getElementById('mon2').value, document.getElementById('mon3').value],
+                tue: [document.getElementById('tue1').value, document.getElementById('tue2').value, document.getElementById('tue3').value],
+                wed: [document.getElementById('wed1').value, document.getElementById('wed2').value, document.getElementById('wed3').value],
+                thu: [document.getElementById('thu1').value, document.getElementById('thu2').value, document.getElementById('thu3').value],
+                fri: [document.getElementById('fri1').value, document.getElementById('fri2').value, document.getElementById('fri3').value],
+                sat: [document.getElementById('sat1').value, document.getElementById('sat2').value, document.getElementById('sat3').value],
+                sun: [document.getElementById('sun1').value, document.getElementById('sun2').value, document.getElementById('sun3').value]
+            };
+
+            fetch('/save_schedule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(schedule)
+            }).then(response => {
+                if (response.ok) {
+                    alert('排班表已儲存');
+                } else {
+                    alert('儲存失敗');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

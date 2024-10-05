@@ -1,0 +1,289 @@
+/* 螢幕 */
+body {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+/* 禁止选择文本 */
+.no-select {
+  user-select: none; /* 禁止选择文本 */
+  -webkit-user-select: none; /* 针对 Safari 和 Chrome 浏览器 */
+  -moz-user-select: none; /* 针对 Firefox 浏览器 */
+  -ms-user-select: none; /* 针对 Internet Explorer */
+}
+
+/* 禁止超連結 */
+a {
+    text-decoration: none; /* 去掉底线 */
+    color: inherit; /* 继承父元素颜色，即按钮的文字颜色 */
+    display: inline-block; /* 使其像按钮内的一部分 */
+}
+
+a:hover {
+    text-decoration: none; /* 去掉底线 */
+    color: inherit; /* 继承父元素颜色，即按钮的文字颜色 */
+    display: inline-block; /* 使其像按钮内的一部分 */
+}
+
+
+/* 进度条区域 */
+.line {
+  display: flex; /* 使用 Flex 布局 */
+  width: 100vw; /* 设置容器的宽度为 100% 视口宽度 */
+  align-items: center; /* 垂直居中 */
+  margin: 0% 0% 1%;
+}
+
+/* 呼叫店員按鈕區域 */
+.home_area {
+  flex: 0 0 10vw; /* 设置固定宽度为 10vw */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 返回偵測按鈕 */
+#homeButton:hover {
+  background-color: #567bb4;
+}
+
+/* 呼叫店員按鈕 */
+#homeButton {
+  background-color: #7aaaf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.8vw;
+  width: 8vw;
+  height: auto;
+  padding: 1% 0%;
+}
+
+/* 进度条区域 */
+.steps-container {
+  flex: 0 0 80vw; /* 设置固定宽度为 90vw */
+  display: flex; /* 使用 Flex 布局，使步骤容器中的元素水平排列 */
+  align-items: center; /* 在垂直方向上将所有步骤居中对齐 */
+  justify-content: center; /* 水平居中步骤 */
+}
+
+.step {
+  display: flex; /* 每个步骤也是一个 Flex 容器，确保其内部元素水平排列 */
+  align-items: center; /* 在垂直方向上居中对齐步骤中的内容（圆圈和箭头） */
+}
+
+/* 完成圈圈 */
+.green_circle {
+  width: 8vw; /* 设置圆圈的宽度为 8% 的视口宽度 */
+  height: 8vw; /* 设置圆圈的高度为 8% 的视口宽度 */
+  background-color: #4CAF50; /* 设置圆圈的背景颜色为绿色 */
+  border-radius: 50%; /* 使元素变成圆形 */
+  display: flex; /* 使用 Flex 布局来让圆圈中的文字居中 */
+  justify-content: center; /* 水平居中圆圈内的文字 */
+  align-items: center; /* 垂直居中圆圈内的文字 */
+  color: white; /* 设置圆圈内文字的颜色为白色 */
+  font-size: 1.5vw; /* 设置文字大小为 1.5% 的视口宽度 */
+  font-weight: bold; /* 将文字设置为加粗 */
+  margin: 0 10px; /* 在每个圆圈左右添加 10px 的外边距 */
+}
+
+/* 進行中圈圈 */
+.yellow_circle {
+  width: 8vw; /* 设置圆圈的宽度为 8% 的视口宽度 */
+  height: 8vw; /* 设置圆圈的高度为 8% 的视口宽度 */
+  background-color: #bd7e00; /* 设置圆圈的背景颜色为绿色 */
+  border-radius: 50%; /* 使元素变成圆形 */
+  display: flex; /* 使用 Flex 布局来让圆圈中的文字居中 */
+  justify-content: center; /* 水平居中圆圈内的文字 */
+  align-items: center; /* 垂直居中圆圈内的文字 */
+  color: white; /* 设置圆圈内文字的颜色为白色 */
+  font-size: 1.5vw; /* 设置文字大小为 1.5% 的视口宽度 */
+  font-weight: bold; /* 将文字设置为加粗 */
+  margin: 0 10px; /* 在每个圆圈左右添加 10px 的外边距 */
+}
+
+/* 未到達圈圈 */
+.grey_circle {
+  width: 8vw; /* 设置圆圈的宽度为 8% 的视口宽度 */
+  height: 8vw; /* 设置圆圈的高度为 8% 的视口宽度 */
+  background-color: #696969; /* 设置圆圈的背景颜色为绿色 */
+  border-radius: 50%; /* 使元素变成圆形 */
+  display: flex; /* 使用 Flex 布局来让圆圈中的文字居中 */
+  justify-content: center; /* 水平居中圆圈内的文字 */
+  align-items: center; /* 垂直居中圆圈内的文字 */
+  color: white; /* 设置圆圈内文字的颜色为白色 */
+  font-size: 1.5vw; /* 设置文字大小为 1.5% 的视口宽度 */
+  font-weight: bold; /* 将文字设置为加粗 */
+  margin: 0 10px; /* 在每个圆圈左右添加 10px 的外边距 */
+}
+
+/* 問題圈圈 */
+.red_circle {
+  width: 8vw; /* 设置圆圈的宽度为 8% 的视口宽度 */
+  height: 8vw; /* 设置圆圈的高度为 8% 的视口宽度 */
+  background-color: #ff0000; /* 设置圆圈的背景颜色为绿色 */
+  border-radius: 50%; /* 使元素变成圆形 */
+  display: flex; /* 使用 Flex 布局来让圆圈中的文字居中 */
+  justify-content: center; /* 水平居中圆圈内的文字 */
+  align-items: center; /* 垂直居中圆圈内的文字 */
+  color: white; /* 设置圆圈内文字的颜色为白色 */
+  font-size: 1.5vw; /* 设置文字大小为 1.5% 的视口宽度 */
+  font-weight: bold; /* 将文字设置为加粗 */
+  margin: 0 10px; /* 在每个圆圈左右添加 10px 的外边距 */
+}
+
+
+.tick {
+  font-size: 3vw; /* 设置勾勾的字体大小为 3% 的视口宽度 */
+}
+
+.arrow {
+  font-size: 3vw; /* 设置箭头的字体大小为 3% 的视口宽度 */
+  color: #000; /* 设置箭头的颜色为黑色 */
+}
+
+
+
+/* 內容區域 */
+.context{
+  
+}
+
+/* 表格區域。 */
+.table_area{
+  margin: auto;
+  width: 80vw;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #a4c7fd;
+}
+
+/* 特定字靠右對齊 */
+.right-align {
+    text-align: right;
+}
+
+th {
+  background-color: #5f9af6 !important;
+  
+}
+
+.odd{
+  background-color: #b4d1fd !important;
+}
+
+.even{
+  background-color: #e2ecf7 !important;
+}
+
+.total-amount{
+  background-color: #aac0f7 !important;
+  color: red;
+}
+
+/* 按鈕與文字區域(未命名) */
+.area{
+  display:flex;
+  width:100vw;
+}
+
+.system_area{
+  width:90vw;
+}
+
+/* 文字區域 */
+.text_area{
+  margin: 1% 10vw 1% 20vw;
+}
+
+/* 文字 */
+.text_area p{
+  text-align: center;
+  width: 60vw;
+  font-size: 1.8vw;
+}
+
+/* 按鈕區域 */
+.button_area{
+  display: flex;
+}
+
+/* 返回偵測按鈕區域 */
+.backButton_area{
+  width: 50vw;
+  /* text-align: center; */
+  padding: 0% 10vw 0% 30vw;
+}
+
+/* 返回偵測按鈕 */
+#backButton:hover{
+  background-color: #567bb4;
+}
+
+#backButton{
+  background-color: #7aaaf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.8vw;
+  width: 8vw;
+  height: auto;
+  padding: 1% 0%;
+}
+
+/* 確認按鈕區域 */
+.confirmButton_area{
+  width: 40vw;
+  text-align: center;
+  padding: 0% 20vw 0% 10vw;
+}
+
+/* 確認按鈕 */
+#confirmButton:hover{
+  background-color: #567bb4;
+}
+
+#confirmButton{
+  background-color: #7aaaf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.8vw;
+  width: 10vw;
+  height: auto;
+  padding: 1% 0%;
+}
+
+/* 呼叫店員按鈕區域 */
+.sos_area{
+  width:10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 返回偵測按鈕 */
+#sosButton:hover{
+  background-color: #567bb4;
+}
+
+/* 呼叫店員按鈕 */
+#sosButton{
+  background-color: #7aaaf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.8vw;
+  width: 8vw;
+  height: auto;
+  padding: 1% 0%;
+}
+
