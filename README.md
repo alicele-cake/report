@@ -35,7 +35,13 @@
 
 ## 畫面:
 
+#### 產生營業額、銷量圖表與輸入進貨量
 
+https://youtu.be/gEmpiIQ49jk
+
+#### 結帳系統流程與資料庫連動
+
+https://youtu.be/9CygKP1nA1Q
 
 ## 環境:
 
