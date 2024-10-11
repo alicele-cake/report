@@ -229,7 +229,7 @@ async function convertData123(predictions, nextTKey, categoryData) {
             console.log("class_id",class_id);
             addInventoryUpdate(class_id, -(data.count));//!!
         }
-        //updateInventory(0, appleQty,currentDate)
+        updateInventory(0, appleQty,currentDate)
         
     }
 
@@ -326,32 +326,32 @@ async function executeInventoryUpdates(currentDate) {
 }
 
 
+//改寫庫存
+async function updateInventory(classId, quantity, currentDate) {
+    // Firestore 中 inventory 集合的文档引用
+    const inventoryQuery = query(collection(db, 'inventory'), where('class_id', '==', classId));
 
-// async function updateInventory(classId, quantity, currentDate) {
-//     // Firestore 中 inventory 集合的文档引用
-//     const inventoryQuery = query(collection(db, 'inventory'), where('class_id', '==', classId));
+    const querySnapshot = await getDocs(inventoryQuery);
 
-//     const querySnapshot = await getDocs(inventoryQuery);
+    if (!querySnapshot.empty) {
+        querySnapshot.forEach(async (docSnapshot) => {
+            const currentInventory = docSnapshot.data().total_inventory;
 
-//     if (!querySnapshot.empty) {
-//         querySnapshot.forEach(async (docSnapshot) => {
-//             const currentInventory = docSnapshot.data().total_inventory;
+            // 更新后的库存数量
+            const updatedInventory = currentInventory + quantity;
 
-//             // 更新后的库存数量
-//             const updatedInventory = currentInventory + quantity;
+            // 更新 Firestore 中的 inventory 文档
+            await updateDoc(docSnapshot.ref, {
+                total_inventory: updatedInventory,
+                update_time: currentDate
+            });
 
-//             // 更新 Firestore 中的 inventory 文档
-//             await updateDoc(docSnapshot.ref, {
-//                 total_inventory: updatedInventory,
-//                 update_time: currentDate
-//             });
-
-//             console.log(`库存更新成功: class_id ${classId}, 更新数量: ${quantity}, 当前库存: ${updatedInventory}`);
-//         });
-//     } else {
-//         console.log(`未找到对应的库存记录: class_id ${classId}`);
-//     }
-// }
+            console.log(`库存更新成功: class_id ${classId}, 更新数量: ${quantity}, 当前库存: ${updatedInventory}`);
+        });
+    } else {
+        console.log(`未找到对应的库存记录: class_id ${classId}`);
+    }
+}
 
 // Function to get the current date and time
 function getCurrentDateTime() {
